@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.master')
 
-<head>
-</head>
+@section('title', 'Daftar Pegawai')
+@section('page-title', 'Halaman Daftar Pegawai')
 
-<body>
+@section('content')
     <div class="container mt-5">
-        <h1 class="mb-4">Daftar Pegawai</h1>
+        <h2 class="mb-4">Daftar Pegawai</h2>
+        <a href="{{ route('employees.create') }}">+ Tambah Pegawai</a>
         <table border="1" cellpadding="5" cellspacing="0">
             <thead>
                 <tr>
@@ -33,8 +33,7 @@
                         <td>
                             <a href="{{ route('employees.show', $employee->id) }}">Detail</a> |
                             <a href="{{ route('employees.edit', $employee->id) }}">Edit</a> |
-                            <form action="{{ route('employees.destroy', $employee->id) }}" method="POST"
-                                style="display:inline;">
+                            <form action="{{ route('employees.destroy', $employee->id) }}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" onclick="return confirm('Yakin ingin menghapus?')">Delete</button>
@@ -45,6 +44,4 @@
             </tbody>
         </table>
     </div>
-</body>
-
-</html>
+@endsection

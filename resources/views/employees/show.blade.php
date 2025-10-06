@@ -1,42 +1,39 @@
-<!DOCTYPE html>
-<html>
+@extends('layouts.master')
 
-<head>
-    <title>Detail Pegawai</title>
-</head>
+@section('title', 'Detail Pegawai')
+@section('page-title', 'Detail Pegawai')
 
-<body>
-    <h1>Detail Pegawai</h1>
-    <table border="1" cellpadding="8" cellspacing="0">
-        <tr>
-            <th>Nama Lengkap</th>
-            <td>{{ $employee->nama_lengkap }}</td>
-        </tr>
-        <tr>
-            <th>Email</th>
-            <td>{{ $employee->email }}</td>
-        </tr>
-        <tr>
-            <th>Nomor Telepon</th>
-            <td>{{ $employee->nomor_telepon }}</td>
-        </tr>
-        <tr>
-            <th>Tanggal Lahir</th>
-            <td>{{ $employee->tanggal_lahir }}</td>
-        </tr>
-        <tr>
-            <th>Alamat</th>
-            <td>{{ $employee->alamat }}</td>
-        </tr>
-        <tr>
-            <th>Tanggal Masuk</th>
-            <td>{{ $employee->tanggal_masuk }}</td>
-        </tr>
-        <tr>
-            <th>Status</th>
-            <td>{{ $employee->status }}</td>
-        </tr>
-    </table>
-</body>
+@section('content')
+<table class="table table-bordered">
+    <tr>
+        <th>Nama Lengkap</th>
+        <td>{{ $employee->nama_lengkap }}</td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td>{{ $employee->email }}</td>
+    </tr>
+    <tr>
+        <th>Nomor Telepon</th>
+        <td>{{ $employee->nomor_telepon }}</td>
+    </tr>
+    <tr>
+        <th>Tanggal Lahir</th>
+        <td>{{ $employee->tanggal_lahir }}</td>
+    </tr>
+    <tr>
+        <th>Alamat</th>
+        <td>{{ $employee->alamat }}</td>
+    </tr>
+    <tr>
+        <th>Tanggal Masuk</th>
+        <td>{{ $employee->tanggal_masuk }}</td>
+    </tr>
+    <tr>
+        <th>Status</th>
+        <td>{{ $employee->status }}</td>
+    </tr>
+</table>
 
-</html>
+<a href="{{ route('employees.index') }}" class="btn btn-secondary mt-3">Kembali</a>
+@endsection
